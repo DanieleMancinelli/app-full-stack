@@ -1,0 +1,14 @@
+<div style="text-align: center; margin-top: 50px;">
+  <h1>Gestione Task</h1>
+  <input [(ngModel)]="newTitle" placeholder="Nuovo task..." />
+  <button (click)="aggiungi()">Aggiungi</button>
+
+  <ul style="list-style: none; padding: 0; margin-top: 20px;">
+    <!-- Usiamo 't' come variabile del ciclo -->
+    <li *ngFor="let t of tasks" style="margin-bottom: 10px;">
+      {{ t.title }}
+      <!-- Passiamo t.id invece di id -->
+      <button (click)="elimina(t.id)" style="color: red; margin-left: 10px;">Elimina</button>
+    </li>
+  </ul>
+</div>
